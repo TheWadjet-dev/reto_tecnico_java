@@ -1,10 +1,10 @@
-# Ejercicio Técnico Backend Java 🚀
+# Ejercicio Técnico Backend Java
 
 Una API REST completa desarrollada con Spring Boot que demuestra las habilidades esenciales de desarrollo backend Java a nivel junior.
 
-## 📋 Características Principales
+## Características Principales
 
-### ✅ Funcionalidades Implementadas
+### Funcionalidades Implementadas
 
 - **CRUD Completo**: Crear, leer, actualizar y eliminar usuarios
 - **API REST**: Endpoints RESTful siguiendo las mejores prácticas
@@ -19,7 +19,7 @@ Una API REST completa desarrollada con Spring Boot que demuestra las habilidades
 - **Datos de Prueba**: Carga automática de datos de ejemplo
 - **Testing**: Pruebas unitarias con JUnit y Mockito
 
-### 🏗️ Arquitectura
+### Arquitectura
 
 ```
 ├── controller/     # Controladores REST
@@ -31,7 +31,7 @@ Una API REST completa desarrollada con Spring Boot que demuestra las habilidades
 └── config/         # Configuración de la aplicación
 ```
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Java 17**
 - **Spring Boot 3.2.0**
@@ -44,7 +44,7 @@ Una API REST completa desarrollada con Spring Boot que demuestra las habilidades
 - **JUnit 5** - Testing
 - **Mockito** - Mocking para pruebas
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ### Prerrequisitos
 
@@ -76,7 +76,7 @@ Una API REST completa desarrollada con Spring Boot que demuestra las habilidades
 
 La aplicación estará disponible en: `http://localhost:8080`
 
-## 📖 Documentación de la API
+## Documentación de la API
 
 ### Swagger UI
 Una vez que la aplicación esté ejecutándose, puedes acceder a la documentación interactiva de la API en:
@@ -126,78 +126,6 @@ Content-Type: application/json
 }
 ```
 
-## 🗄️ Base de Datos
-
-### H2 Console
-La aplicación usa una base de datos H2 en memoria. Puedes acceder a la consola web en:
-- **URL**: `http://localhost:8080/h2-console`
-- **JDBC URL**: `jdbc:h2:mem:testdb`
-- **Usuario**: `sa`
-- **Contraseña**: `password`
-
-### Modelo de Datos
-
-#### Usuario
-```sql
-CREATE TABLE users (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellido VARCHAR(50) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    telefono VARCHAR(15),
-    fecha_creacion TIMESTAMP,
-    fecha_actualizacion TIMESTAMP,
-    activo BOOLEAN DEFAULT TRUE
-);
-```
-
-## 🧪 Testing
-
-### Ejecutar Pruebas
-```bash
-# Ejecutar todas las pruebas
-mvn test
-
-# Ejecutar pruebas con reporte de cobertura
-mvn test jacoco:report
-```
-
-### Tipos de Pruebas
-- **Pruebas de Controlador**: Testing de endpoints REST
-- **Pruebas de Servicio**: Testing de lógica de negocio
-- **Pruebas de Integración**: Testing de componentes integrados
-
-## 📊 Monitoreo
-
-### Spring Boot Actuator
-La aplicación incluye endpoints de monitoreo:
-- **Health**: `http://localhost:8080/actuator/health`
-- **Info**: `http://localhost:8080/actuator/info`
-- **Metrics**: `http://localhost:8080/actuator/metrics`
-
-## ⚙️ Configuración
-
-### application.properties
-Las principales configuraciones se encuentran en `src/main/resources/application.properties`:
-
-```properties
-# Puerto del servidor
-server.port=8080
-
-# Base de datos H2
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.h2.console.enabled=true
-
-# JPA/Hibernate
-spring.jpa.hibernate.ddl-auto=create-drop
-spring.jpa.show-sql=true
-
-# Logging
-logging.level.com.example.ejercicio=DEBUG
-```
-
-## 🔧 Desarrollo
-
 ### Estructura del Proyecto
 ```
 src/
@@ -222,7 +150,7 @@ Al iniciar la aplicación, se cargan automáticamente 5 usuarios de ejemplo:
 - 4 usuarios activos
 - 1 usuario inactivo (para demostrar soft delete)
 
-## 🚨 Manejo de Errores
+## Manejo de Errores
 
 La aplicación implementa un manejo global de errores que retorna respuestas consistentes:
 
@@ -241,7 +169,7 @@ La aplicación implementa un manejo global de errores que retorna respuestas con
 - **400 Bad Request**: Datos inválidos/validación fallida
 - **500 Internal Server Error**: Errores internos
 
-## 🔒 Seguridad
+## Seguridad
 
 La configuración de seguridad está diseñada para desarrollo y permite:
 - Acceso libre a todos los endpoints de la API
@@ -249,9 +177,7 @@ La configuración de seguridad está diseñada para desarrollo y permite:
 - Acceso libre a la consola H2
 - Configuración CORS permisiva
 
-> **Nota**: En producción, se debe implementar autenticación y autorización adecuadas.
-
-## 📝 Validaciones Implementadas
+## Validaciones Implementadas
 
 ### Usuario
 - **Nombre**: Requerido, 2-50 caracteres
@@ -259,7 +185,7 @@ La configuración de seguridad está diseñada para desarrollo y permite:
 - **Email**: Requerido, formato válido, único
 - **Teléfono**: Opcional, 10-15 caracteres
 
-## 🎯 Funcionalidades Destacadas
+## Funcionalidades Destacadas
 
 ### 1. CRUD Completo
 - Crear, leer, actualizar y eliminar usuarios
@@ -280,27 +206,3 @@ La configuración de seguridad está diseñada para desarrollo y permite:
 - Eliminación lógica preservando datos
 - Funcionalidad de activación/desactivación
 - Consultas que respetan el estado
-
-## 🤝 Contribución
-
-Para contribuir al proyecto:
-
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
-
-## 📞 Contacto
-
-- **Desarrollador**: [Tu Nombre]
-- **Email**: developer@example.com
-- **GitHub**: [@developer](https://github.com/developer)
-
----
-
-⭐ **¡Este proyecto demuestra habilidades completas de desarrollo backend Java a nivel junior!** ⭐
