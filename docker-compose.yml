@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: ejercicio-app
+    env_file:
+      - .env.example  # Cambia a .env si tienes tu propio archivo
+    environment:
+      # Estas variables sobrescriben las del archivo .env si es necesario
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "${SERVER_PORT:-8080}:8080"
+    restart: unless-stopped
